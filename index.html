@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jigsaw Puzzle 💕</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background: #fff0f6;
+      font-family: Arial, sans-serif;
+    }
+    #puzzle {
+      width: 800px;
+      height: 600px;
+      border: 4px solid #ff85c0;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+    #message {
+      display: none;
+      margin-top: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff4d94;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="puzzle"></canvas>
+  <div id="message">💖 We're a perfect pair 💖</div>
+
+  <!-- Puzzle library -->
+  <script src="https://cdn.jsdelivr.net/npm/jigsawjs/dist/jigsaw.min.js"></script>
+  <script>
+    const puzzle = new Jigsaw({
+      canvas: document.getElementById('puzzle'),
+      src: 'photo.jpg', // your photo
+      rows: 4,
+      cols: 6,
+      onComplete: () => {
+        document.getElementById('message').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
