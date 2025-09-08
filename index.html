@@ -38,18 +38,17 @@
   <canvas id="puzzle"></canvas>
   <div id="message">💖 We're a perfect pair 💖</div>
 
-  <!-- Puzzle library -->
-  <script src="https://cdn.jsdelivr.net/npm/jigsawjs/dist/jigsaw.min.js"></script>
-  <script>
-    const puzzle = new Jigsaw({
-      canvas: document.getElementById('puzzle'),
-      src: 'photo.jpg', // your photo
-      rows: 4,
-      cols: 6,
-      onComplete: () => {
-        document.getElementById('message').style.display = 'block';
-      }
-    });
-  </script>
+ <script>
+  const puzzle = new Jigsaw({
+    canvas: document.getElementById('puzzle'),
+    src: 'photo.jpg', // <-- updated name
+    rows: 4,
+    cols: 6,
+    onComplete: () => {
+      document.getElementById('message').style.display = 'block';
+    }
+  });
+</script>
 </body>
 </html>
+
